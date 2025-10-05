@@ -3,7 +3,7 @@ from scenedetect.detectors import ContentDetector
 import ffmpeg
 import os
 
-def find_scenes(video_path, threshold=30.0):
+def find_scenes(video_path, threshold=40.0):
     """
     Находит моменты смены сцен в видео.
     """
