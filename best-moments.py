@@ -17,7 +17,7 @@ def find_scenes(video_path, threshold=30.0):
     scenes = scene_manager.get_scene_list()
     return [(start.get_seconds(), end.get_seconds()) for start, end in scenes]
 
-def split_long_scenes(scenes, min_duration=15, max_duration=60):
+def split_long_scenes(scenes, min_duration=15, max_duration=30):
     """
     Делит слишком длинные сцены на части, объединяет короткие.
     """
@@ -73,7 +73,7 @@ def cut_scenes(video_path, scene_timestamps, output_dir="clips"):
     return clips
 
 # Основной процесс
-video_file = "tv3.MP4"
+video_file = "xiaomi.mp4"
 scene_timestamps = find_scenes(video_file)
 scene_timestamps = split_long_scenes(scene_timestamps)
 print("Финальные сцены:", scene_timestamps)
